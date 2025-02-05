@@ -139,7 +139,7 @@ In the `formatToParts()` example, the first part is a `MessageMarkupPart`; the
 second is a `MessageLiteralPart`; the third is a `MessageExpressionPart`; and
 the fourth is a `MessageMarkupClosePart`.
 
-### `MessageMarkupPart` interface
+### `MessageMarkupPart`
 
 A `MessageMarkupPart` has `'markup'` as its `type` property. Its other
 properties are:

@@ -1,6 +1,6 @@
 # [messageformat.dev](https://messageformat.dev)
 
-A website for Message Format 2, a tool for localizing dynamic messages in
+A website for MessageFormat 2 (MF2), a tool for localizing dynamic messages in
 software projects, by Unicode.
 
 The website is maintained by Luca Casonato (@lucacasonato).

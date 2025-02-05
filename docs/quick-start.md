@@ -3,21 +3,21 @@ title: Quick Start
 description: Get started with the basics of MessageFormat 2.
 ---
 
-MessageFormat 2 is designed to enable localization of dynamic messages across
-different human languages. This page walks through the syntax of Message Format
-2 messages, giving an overview of what Message Format 2 is capable of.
+MessageFormat 2 (MF2) is designed to enable localization of dynamic messages across
+different human languages. This page walks through the syntax of MessageFormat
+2 messages, giving an overview of what MessageFormat 2 is capable of.
 
-To use Message Format 2 in a project, follow these set up guides:
+To use MessageFormat 2 in a project, follow these set up guides:
 
 - [JavaScript/Typescript](/docs/integration/js)
 - [Java](/docs/integration/java)
 - [C](/docs/integration/c)
 - [C++](/docs/integration/cpp)
 
-To set up your editor or IDE to work with Message Format 2, see the
+To set up your editor or IDE to work with MessageFormat 2, see the
 [editor setup](/docs/lsp) guide.
 
-You can also try out Message Format 2 in the online playground:
+You can also try out MessageFormat 2 in the online playground:
 
 <a href="/playground/" class="button mb-8">Try in Playground</a>
 
@@ -91,7 +91,7 @@ It is the {$today :datetime} today.
 
 </mf2-interactive>
 
-Message Format 2 has multiple built-in functions. These allow you, for example,
+MessageFormat 2 has multiple built-in functions. These allow you, for example,
 to format numbers in a locale appropriate way. See the
 [full list of built-in functions](/docs/reference/functions/).
 
@@ -183,14 +183,14 @@ It is {$now :datetime hourCycle=h12}
 
 </mf2-interactive>
 
-> There is no boolean literal in Message Format 2. Options with boolean values
+> There is no boolean literal in MessageFormat 2. Options with boolean values
 > usually use the text literals `true` and `false` to represent the two boolean
 > states.
 
 ### Quoted Text
 
 Text literals that need to contain spaces or special characters like `{` or `@`
-can be wrapped in `|`, the quote character in Message Format 2 syntax.
+can be wrapped in `|`, the quote character in MessageFormat 2 syntax.
 
 <mf2-interactive>
 
@@ -232,7 +232,7 @@ This is a star: {#star-icon /}
 
 </mf2-interactive>
 
-Message Format 2 does not define any specific markup tags. Instead, it is up to
+MessageFormat 2 does not define any specific markup tags. Instead, it is up to
 the application to define the tags that are used in messages. There is also no
 requirement that opening and closing tags must match, or that they are used in a
 hierarchical way.

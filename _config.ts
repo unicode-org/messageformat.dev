@@ -13,6 +13,7 @@ import AUTOLINK_REFERENCES from "./references.json" with { type: "json" };
 
 import tailwindConfig from "./tailwind.config.ts";
 import autolink from "./_plugins/autolink.ts";
+import tableWrap from "./_plugins/table-wrap.ts";
 
 const site = lume({ location: new URL("https://messageformat.dev") }, {
   markdown: {
@@ -30,6 +31,7 @@ const site = lume({ location: new URL("https://messageformat.dev") }, {
       [autolink, {
         references: AUTOLINK_REFERENCES,
       }],
+      [tableWrap],
     ],
   },
 });
@@ -43,7 +45,12 @@ site.copy("static/textarea2");
 site.use(tailwindcss({ options: tailwindConfig }));
 site.use(postcss());
 site.use(jsx({}));
-site.use(esbuild({ extensions: [".entry.ts"], options: { minify: false, keepNames: false } }));
+site.use(
+  esbuild({
+    extensions: [".entry.ts"],
+    options: { minify: false, keepNames: false },
+  }),
+);
 site.use(inline());
 site.use(nav({}));
 site.use(toc({ anchor: false }));

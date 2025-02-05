@@ -149,6 +149,14 @@
   @apply bg-gray-100 p-4 rounded font-mono text-base overflow-y-auto;
 }
 
+.markdown table {
+  @apply border-collapse;
+}
+
+.markdown .table-wrapper {
+  @apply my-4 overflow-x-auto w-full;
+}
+
 .markdown table td, .markdown table th {
   @apply border border-gray-300 p-2;
 }

@@ -71,15 +71,15 @@ layout: layout.vto
     </div>
   </nav>
 
-  <div class="md:ml-80 w-full flex justify-center">
-    <main class="flex w-full -mx-8 flex-col-reverse lg:flex-row">
-      <div class="max-w-[90ch] w-full px-6 sm:px-8 md:px-16">
+  <div class="md:pl-80 w-full flex justify-center">
+    <main class="flex w-full -mx-8 flex-col-reverse xl:flex-row">
+      <div class="max-w-[90ch] overflow-x-hidden w-full px-6 sm:px-8 md:px-16">
         <h1 class="text-4xl font-serif font-bold text-black border-b border-gray-200 pb-2 mb-8">{{ title }}</h1>
         <div class="markdown mb-24">{{ content }}</div>
       </div>
-      <details id="toc" class="lg:flex-grow-0 lg:flex-shrink-0 lg:basis-1/5 bg-gray-100 lg:bg-transparent rounded-md mx-6 sm:mx-8 md:mx-16 mb-6">
-        <summary class="text-lg font-bold text-black lg:hidden px-4 py-2">On this page</summary>
-        <ul class="pl-4 lg:border-l border-gray-200 lg:sticky lg:top-24 border-t lg:border-t-0 py-3 px-3 lg:py-0 lg:pr-0 space-y-1">
+      <details id="toc" class="xl:flex-grow-0 xl:flex-shrink-0 xl:basis-1/5 bg-gray-100 xl:bg-transparent rounded-md mx-6 sm:mx-8 md:mx-16 mb-6">
+        <summary class="text-lg font-bold text-black xl:hidden px-4 py-2">On this page</summary>
+        <ul class="pl-4 xl:border-l border-gray-200 xl:fixed xl:top-24 border-t xl:border-t-0 py-3 px-3 xl:py-0 xl:pr-8 space-y-1">
           {{ for each of toc }}
             <li>
               <a href="#{{ each.slug }}" class="block text-black hover:underline leading-5">{{ each.text }}</a>

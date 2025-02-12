@@ -2,7 +2,8 @@ export const layout = "layout.vto";
 
 export const title = "Playground";
 
-export default function IndexPage() {
+// deno-lint-ignore no-explicit-any
+export default function IndexPage({ comp }: any) {
   return (
     <>
       <header class="relative h-24 z-30">
@@ -267,6 +268,7 @@ export default function IndexPage() {
           </div>
         </div>
       </div>
+      <comp.footer />
     </>
   );
 }

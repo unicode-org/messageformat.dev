@@ -302,12 +302,3 @@ highlighted-textarea [data-textarea] {
 .highlighted ::highlight(error-hover) {
   background-color: rgba(248,0,0, 0.1);
 }
-
-footer {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  border-top: 0.5em solid #eeeefe;
-  font-size: smaller;
-}

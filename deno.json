@@ -15,5 +15,6 @@
     ],
     "jsx": "react-jsx",
     "jsxImportSource": "preact"
-  }
+  },
+  "license": "Unicode-3.0"
 }

@@ -196,7 +196,7 @@ export function Examples() {
               time formatting function
             </span>
             <CodeBlock>
-              It is {" {"}
+              It is{" {"}
               <span class="text-orange-500">{`$timestamp`}</span>{" "}
               <span class="text-green-700">
                 :tim<span id="formatting-function">e</span>

@@ -76,6 +76,7 @@ layout: layout.vto
       <div class="max-w-[90ch] overflow-x-hidden w-full px-6 sm:px-8 md:px-16">
         <h1 class="text-4xl font-serif font-bold text-black border-b border-gray-200 pb-2 mb-8">{{ title }}</h1>
         <div class="markdown mb-24">{{ content }}</div>
+        {{ comp.footer({ padding: "" }) }}
       </div>
       <details id="toc" class="xl:flex-grow-0 xl:flex-shrink-0 xl:basis-1/5 bg-gray-100 xl:bg-transparent rounded-md mx-6 sm:mx-8 md:mx-16 mb-6">
         <summary class="text-lg font-bold text-black xl:hidden px-4 py-2">On this page</summary>

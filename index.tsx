@@ -4,7 +4,8 @@ export const layout = "layout.vto";
 
 export const title = "Home";
 
-export default function IndexPage() {
+// deno-lint-ignore no-explicit-any
+export default function IndexPage({ comp }: any) {
   return (
     <>
       <div class="bg-blue-50">
@@ -12,8 +13,8 @@ export default function IndexPage() {
           <Head />
           <section class="p-4 max-w-screen-lg mx-auto mt-2 md:mt-4 lg:mt-8 text-lg md:text-xl lg:text-2xl space-y-4">
             <AdParagraph>
-              MessageFormat 2 (MF2) is a Unicode standard for localizable dynamic
-              message strings, designed to make it simple to create{" "}
+              MessageFormat 2 (MF2) is a Unicode standard for localizable
+              dynamic message strings, designed to make it simple to create{" "}
               <b>natural sounding</b> localized messages.
             </AdParagraph>
             <div class="pt-4 md:pt-8 flex flex-wrap gap-4 md:gap-6">
@@ -113,42 +114,7 @@ export default function IndexPage() {
           </div>
         </section>
       </div>
-      <footer class="bg-blue-50">
-        <div class="max-w-screen-md mx-auto p-4 text-lg text-center">
-          <p>
-            MessageFormat 2 is developed by{" "}
-            <a
-              href="https://unicode.org"
-              class="underline underline-offset-2 hover:text-blue-600 transition duration-100"
-            >
-              Unicode
-            </a>{" "}
-            in the{" "}
-            <a
-              href="https://github.com/unicode-org/message-format-wg"
-              class="underline underline-offset-2 hover:text-blue-600 transition duration-100"
-            >
-              MessageFormat Working Group
-            </a>
-            .
-          </p>
-          <p>
-            Website designed by{"  "}
-            <a
-              href="https://lcas.dev"
-              class="underline underline-offset-2 hover:text-blue-600 transition duration-100"
-            >
-              Luca Casonato
-            </a>. For more, see{" "}
-            <a
-              href="/about/"
-              class="underline underline-offset-2 hover:text-blue-600 transition duration-100"
-            >
-              About
-            </a>.
-          </p>
-        </div>
-      </footer>
+      <comp.footer background="bg-blue-50" />
     </>
   );
 }

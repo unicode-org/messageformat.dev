@@ -5,24 +5,20 @@ sidebar:
   - about/
 ---
 
-This website is a third party website for MessageFormat 2, maintained by Luca
-Casonato.
+This website is a website for MessageFormat 2, maintained by the
+[MessageFormat 2 Working Group](https://github.com/unicode-org/message-format-wg)
+at [Unicode](https://www.unicode.org/).
 
-This website was developed by Luca Casonato. The content is maintained by Luca
-Casonato and Tim Chevalier.
+This website was originally developed and designed by Luca Casonato.
 
-The playground and interactie code blocks format messages using the JavaScript
+Many thanks to Tim Chevalier for his work on a large part of the documentation
+content.
+
+The playground and interactive code blocks format messages using the JavaScript
 implementation of MessageFormat 2, maintained by Eemeli Aro. Highlighting and
 other language features are powered by the
 [MessageFormat 2 Language Server](https://github.com/lucacasonato/mf2-tools),
 maintained by Luca Casonato and Nicolò Ribaudo.
-
-## License
-
-Content on this website is licensed under the
-[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) license. The source
-code for this website is licensed under the
-[MIT License](https://opensource.org/licenses/MIT).
 
 ## Logo
 

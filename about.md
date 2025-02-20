@@ -22,8 +22,7 @@ maintained by Luca Casonato and Nicolò Ribaudo.
 
 ## Logo
 
-The MessageFormat logo was designed by Luca Casonato. It is licensed under the
-[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) license.
+The MessageFormat logo was designed by Luca Casonato.
 
 There are multiple versions of the logo - see the below table for the different
 variants and PNG and SVG download links for both.

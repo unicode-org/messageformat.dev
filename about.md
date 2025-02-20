@@ -20,6 +20,5 @@ other language features are powered by the
 [MessageFormat 2 Language Server](https://github.com/lucacasonato/mf2-tools),
 maintained by Luca Casonato and Nicolò Ribaudo.
 
-## Logo
 
 The MessageFormat logo was designed by Luca Casonato.

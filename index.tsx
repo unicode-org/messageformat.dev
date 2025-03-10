@@ -9,6 +9,25 @@ export default function IndexPage({ comp }: any) {
   return (
     <>
       <div class="bg-blue-50">
+        <div class="bg-[#5555FF]">
+          <div class="mx-auto max-w-screen-md text-white px-4 py-2 text-xl font-semibold flex items-center justify-between gap-3">
+            <img
+              src="/static/logos/unicode.svg"
+              alt="Unicode"
+              class="inline size-10 justify-self-start"
+            />
+            <span>
+              A{" "}
+              <a
+                href="https://home.unicode.org/about-unicode/"
+                class="hover:underline"
+              >
+                Unicode
+              </a>{" "}
+              project
+            </span>
+          </div>
+        </div>
         <div class="mx-auto max-w-screen-md">
           <Head />
           <section class="p-4 max-w-screen-lg mx-auto mt-2 md:mt-4 lg:mt-8 text-lg md:text-xl lg:text-2xl space-y-4">

@@ -3,9 +3,10 @@ title: Quick Start
 description: Get started with the basics of MessageFormat 2.
 ---
 
-MessageFormat 2 (MF2) is designed to enable localization of dynamic messages across
-different human languages. This page walks through the syntax of MessageFormat
-2 messages, giving an overview of what MessageFormat 2 is capable of.
+MessageFormat 2 (MF2) is designed to enable localization of dynamic messages
+across different human languages. This page walks through the syntax of
+MessageFormat 2 messages, giving an overview of what MessageFormat 2 is capable
+of.
 
 To use MessageFormat 2 in a project, follow these set up guides:
 
@@ -19,7 +20,12 @@ To set up your editor or IDE to work with MessageFormat 2, see the
 
 You can also try out MessageFormat 2 in the online playground:
 
-<a href="/playground/" class="button mb-8">Try in Playground</a>
+<a href="/playground/" class="button mb-4">Try in Playground</a>
+
+MessageFormat 2 is developed in the
+[Message Format Working Group](https://github.com/unicode-org/message-format-wg)
+of the Unicode Consortium. The complete specification is available
+[on unicode.org](https://www.unicode.org/reports/tr35/tr35-73/tr35-messageFormat.html).
 
 ## Basic Syntax
 

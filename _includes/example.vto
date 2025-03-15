@@ -1,0 +1,27 @@
+---
+layout: layout.vto
+---
+
+{{ comp.header({ title: "Examples" }) }}
+
+<div id="content" class="flex gap-4 mt-20">
+  <div class="w-full flex  justify-center">
+    <main class="max-w-[90ch] overflow-x-hidden w-full px-6 sm:px-8 md:px-16">
+      <p class="mb-4"><a href="/examples/" class="underline underline-offset-4 hover:text-blue-600 text-lg">← Back to Overview</a></p>
+      <h1 class="text-4xl font-serif font-bold text-black border-b border-gray-200 pb-2 mb-4">{{ title }}</h1>
+      <p class="markdown">{{ description }}</p>
+      <div class="markdown mb-16">{{ content }}</div>
+      {{ if related && related.length > 0 }}
+        <h2 class="text-2xl font-serif font-bold text-black border-b border-gray-200 pb-2 mb-4">Related</h2>
+        <ul class="list-disc ml-6 mb-16">
+          {{ for item of related }}
+            <li>
+              <a href="/{{ item }}" class="underline underline-offset-4 hover:text-blue-600 text-lg">{{ search.data(item).section }}: {{ search.data(item).title }}</a>
+            </li>
+          {{ /for }}
+        </ul>
+      {{ /if }}
+      {{ comp.footer({ padding: "" }) }}
+    </main>
+  </div>
+</div>

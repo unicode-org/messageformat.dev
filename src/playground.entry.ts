@@ -6,6 +6,7 @@ import { type HighlightedTextarea } from "./textarea.ts";
 import "./textarea.ts";
 import { mf2Highlight } from "./highlighters/mf2.ts";
 import { jsonHighlight } from "./highlighters/json.ts";
+import { decode, encode } from "./_utils/encode.ts";
 
 globalThis.addEventListener("DOMContentLoaded", () => {
   const supportedLocales = locales.all
@@ -118,9 +119,9 @@ globalThis.addEventListener("DOMContentLoaded", () => {
   try {
     if (hash) {
       const [encodedMessage, encodedData, encodedLocale] = hash.split(".");
-      const message = atob(encodedMessage);
-      const data = atob(encodedData);
-      const locale = atob(encodedLocale);
+      const message = decode(encodedMessage);
+      const data = decode(encodedData);
+      const locale = decode(encodedLocale);
       messageArea.value = message;
       dataArea.value = data;
       localeSelect.value = locale;
@@ -185,9 +186,9 @@ globalThis.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    const encodedMessage = btoa(messageArea.value);
-    const encodedData = btoa(dataArea.value);
-    const encodedLocale = btoa(localeSelect.value);
+    const encodedMessage = encode(messageArea.value);
+    const encodedData = encode(dataArea.value);
+    const encodedLocale = encode(localeSelect.value);
     const hash = `#${encodedMessage}.${encodedData}.${encodedLocale}`
       .replaceAll("/", "_").replaceAll("+", "-").replaceAll("=", "");
     history.replaceState(null, "", hash);

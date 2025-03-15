@@ -188,6 +188,15 @@ export default function IndexPage({ comp }: any) {
                 quick start guide
               </a>.
             </p>
+            <p class="text-black">
+              The playground{" "}
+              <a
+                href="/about/#playground"
+                class="text-blue-700 underline"
+              >
+                validates and formats messages in your browser
+              </a>. The message or data you enter is not sent to any server. .
+            </p>
           </div>
           <div class="px-2 space-y-2">
             <h2 class="text-xl font-bold font-serif pb-1 text-black">

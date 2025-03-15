@@ -14,11 +14,16 @@ This website was originally developed and designed by Luca Casonato.
 Many thanks to Tim Chevalier for his work on a large part of the documentation
 content.
 
+The MessageFormat logo was designed by Luca Casonato.
+
+## Playground
+
 The playground and interactive code blocks format messages using the JavaScript
 implementation of MessageFormat 2, maintained by Eemeli Aro. Highlighting and
 other language features are powered by the
 [MessageFormat 2 Language Server](https://github.com/lucacasonato/mf2-tools),
 maintained by Luca Casonato and Nicolò Ribaudo.
 
-
-The MessageFormat logo was designed by Luca Casonato.
+All validation and formatting of messages happens in your browser using the JS
+implementation and the language server (via WASM). No data is sent to any
+server.

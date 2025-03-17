@@ -51,7 +51,7 @@ export function formatMessageToHTML(
             }
             case "link": {
               const link = document.createElement("a");
-              link.href = part.options?.url as string;
+              link.href = part.options?.to as string;
               link.target = "_blank";
               link.rel = "noopener noreferrer";
               currentElement.appendChild(link);

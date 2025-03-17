@@ -256,9 +256,13 @@ separated by an equal sign `=`. Options are separated by spaces. Options can be
 used to modify the behaviour of markup tags, for example changing the target of
 a link.
 
+<mf2-interactive>
+
 ```mf2
-This is a {#link to="home"}link{/link}.
+This is a {#link to=|https://example.com|}link{/link}.
 ```
+
+</mf2-interactive>
 
 It is best practice to not mix styles into messages too much - instead, use
 markup tags to add semantic meaning and selectors to text, and let the

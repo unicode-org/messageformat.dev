@@ -1,3 +1,4 @@
+import plugin from "npm:tailwindcss@3.4.4/plugin.js";
 import type { Config } from "npm:tailwindcss@3.4.4";
 
 export default {
@@ -14,4 +15,14 @@ export default {
       },
     },
   },
+
+  plugins: [
+    plugin((p) => {
+      p.addUtilities({
+        '.font-mono': {
+          fontVariantLigatures: 'none',
+        },
+      })
+    }),
+  ],
 } satisfies Config;

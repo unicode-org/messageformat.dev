@@ -3,9 +3,9 @@ title: Using MF2 with JavaScript and TypeScript
 sidebar_title: JavaScript/TypeScript
 ---
 
-The following guide explains how to use the `mf2-messageformat` package to
-format MF2 messages. For full API documentation, see the
-[API documentation site](https://messageformat.github.io/messageformat/api/messageformat/)
+The following guide explains how to use the `messageformat` package to format
+MF2 messages. For full API documentation, see the
+[API documentation site](https://messageformat.github.io/modules/messageformat)
 for the package. This guide shows the simplest use cases for the API. More
 advanced uses are possible, which are documented in the API documentation.
 
@@ -80,7 +80,7 @@ this case, the error is an "unresolved variable" error. In this example, the
 error handling callback just logs the type of the error, for brevity. The full
 error could also be logged. The `MessageError` class defines the structure of
 errors: see
-[the API documentation](https://messageformat.github.io/messageformat/api/messageformat.messageerror/).
+[the API documentation](https://messageformat.github.io/classes/messageformat.MessageError).
 
 ### `formatToParts()` method
 
@@ -125,7 +125,7 @@ second argument.
 ## `MessagePart` type
 
 `MessagePart` is defined as follows
-([full documentation](https://messageformat.github.io/messageformat/api/messageformat.messagepart/)):
+([full documentation](https://messageformat.github.io/types/messageformat.MessagePart)):
 
 ```ts
 export type MessagePart =
@@ -172,7 +172,7 @@ with `MessageLiteralPart`). Since an expression's contents vary depending on
 input, `source` and `value` are usually different from each other.
 
 See the full
-[MessageExpressionPart](https://messageformat.github.io/messageformat/api/messageformat.messageexpressionpart/)
+[MessageExpressionPart](https://messageformat.github.io/interfaces/messageformat.MessageExpressionPart)
 documentation for more.
 
 ## Writing custom functions
@@ -222,9 +222,9 @@ Some things to notice:
     values can have other properties, which are omitted here in the interest of
     providing the simplest possible example.
 
-> As of this writing, the online API docs aren't updated to include the
-> `MessageValue` type, but it can be found in the code
-> [here](https://github.com/messageformat/messageformat/blob/main/mf2/messageformat/src/functions/index.ts).
+See the full
+[MessageValue](https://messageformat.github.io/interfaces/messageformat_functions.MessageValue)
+documentation for more.
 
 To clarify what we mean by "the operand type can be a `MessageValue`, consider
 the following message:
@@ -256,5 +256,5 @@ A more robust method would check the type of its argument and, if passed a
 `toUpperCase()` on the result.
 
 For more details, see the
-[API documentation](https://messageformat.github.io/messageformat/api/messageformat.messageformat._constructor_/)
+[API documentation](https://messageformat.github.io/classes/messageformat.MessageFormat)
 on the `MessageFormat` constructor.

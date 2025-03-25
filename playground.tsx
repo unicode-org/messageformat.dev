@@ -258,7 +258,7 @@ export default function IndexPage({ comp }: any) {
                     <code>link</code>
                   </td>
                   <td class="border px-2">
-                    Add a link, pointing to the <code>url</code> option.
+                    Add a link, pointing to the <code>to</code> option.
                   </td>
                 </tr>
                 <tr>

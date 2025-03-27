@@ -9,7 +9,7 @@
     <script src="/static/js/leader-line.min.js" defer></script>
     <script src="/src/utils.entry.js" inline></script>
     {{ /if }}
-    {{ if url.startsWith('/docs/') }}
+    {{ if url.startsWith('/docs/') || url.startsWith('/examples/') }}
     <script src="/src/interactive.entry.js" type="module"></script>
     {{ /if }}
     {{ if url == '/playground/' }}

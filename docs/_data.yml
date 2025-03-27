@@ -3,6 +3,7 @@ sidebar:
   - docs/quick-start/
   - docs/why/
   - docs/translators/
+  - examples/
   - section: Reference
     children:
       - docs/reference/functions/

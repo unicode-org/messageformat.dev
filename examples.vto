@@ -1,0 +1,45 @@
+---
+layout: layout.vto
+title: Examples
+sections:
+  - numbers
+  - variants
+---
+
+{{ comp.header({ title: "Examples" }) }}
+
+<div class="px-8 mt-24 mb-12 mx-auto max-w-screen-lg">
+  <h1 class="text-4xl font-serif font-bold text-black border-b border-gray-200 pb-2 mb-8">Examples</h1>
+  <div class="markdown mb-8">
+    <p>MessageFormat 2 is a powerful and flexible language for creating localized messages. This examples catalog showcases a variety of common use cases and how to solve them with MessageFormat 2.</p>
+
+    <p>Each example includes an interactive playground where you can experiment with the code and see the output in real-time. The examples are organized by category.</p>
+
+    <div class="text-lg bg-blue-50 border-l-4 border-blue-500 text-blue-900 p-4 mb-8">
+      Looking for a structured walkthrough of MessageFormat 2 instead? Check out the <a href="/docs/quick-start/" class="underline underline-offset-4 hover:text-blue-600">Quick Start</a>.
+    </div>
+  </div>
+
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+    {{ for section of sections }}
+    <div>
+      <h2 class="text-2xl font-serif font-bold text-black border-b border-gray-200">{{ search.page(`example_${section}`).section }}</h2>
+      <ul class="mt-3">
+        {{ for page of search.pages(`example_${section}`) }}
+        <li><a href="{{ page.url }}" class="text-lg text-black underline hover:text-blue-600 flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 328 258" width="1rem" class="stroke-black">
+            <path d="m86 58-71 70 71 72M186 15l-46 228M242 59l71 71-71 72" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="30"></path>
+          </svg>
+          {{ page.title }}
+        </a></li>
+        {{ /for }}
+      </ul>
+    </div>
+    {{ /for }}
+  </div>
+
+
+  {{ comp.footer({ padding: "" }) }}
+</div>
+

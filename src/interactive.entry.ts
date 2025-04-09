@@ -1,3 +1,4 @@
+import { encode } from "./_utils/encode.ts";
 import { formatMessageToHTML, MessageFormat } from "./_utils/message_format.ts";
 import { jsonHighlight } from "./highlighters/json.ts";
 import { mf2Highlight } from "./highlighters/mf2.ts";
@@ -134,9 +135,9 @@ export class Mf2Interactive extends HTMLElement {
     this.#output.classList.remove("error");
     this.#output.innerHTML = "";
 
-    const encodedMessage = btoa(code);
-    const encodedData = btoa(data);
-    const encodedLocale = btoa(this.#locale);
+    const encodedMessage = encode(code);
+    const encodedData = encode(data);
+    const encodedLocale = encode(this.#locale);
     const hash = `#${encodedMessage}.${encodedData}.${encodedLocale}`
       .replaceAll("/", "_").replaceAll("+", "-").replaceAll("=", "");
     this.#share.href = `/playground/${hash}`;

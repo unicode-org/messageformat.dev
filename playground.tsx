@@ -3,7 +3,7 @@ export const layout = "layout.vto";
 export const title = "Playground";
 
 // deno-lint-ignore no-explicit-any
-export default function IndexPage({ comp }: any) {
+export default function PlaygroundPage({ comp }: any) {
   return (
     <>
       <header class="relative h-24 z-30">

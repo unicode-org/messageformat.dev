@@ -49,6 +49,12 @@ export default function IndexPage({ comp }: any) {
               >
                 Documentation
               </a>
+              <a
+                href="/examples/"
+                class="inline-block px-6 md:px-8 py-3 md:py-4 text-lg font-bold text-blue-600 rounded-full bg-blue-100 hover:bg-blue-200 active:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-white"
+              >
+                Examples
+              </a>
             </div>
           </section>
         </div>

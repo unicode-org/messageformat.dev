@@ -182,13 +182,15 @@ providing definitions for custom functions. To start with, let's write code for
 a simple custom function:
 
 ```js
-/**
- * @params {string[]} locales
- * @params {Record<string, unknown>} options
- * @params {string} value
- */
-function uppercase(locales, options, value) {
-  return { toString: () => value.toUpperCase() };
+import { DefaultFunctions, asString } from "messageformat@next/functions";
+
+/** @type {typeof DefaultFunctions.string} */
+function uppercase(context, options, input) {
+  return DefaultFunctions.string(
+    context,
+    options,
+    asString(input).toLocaleUpperCase(context.locales),
+  );
 }
 ```
 
@@ -196,6 +198,8 @@ Now that this function is defined, we can pass it to the `MessageFormat`
 constructor as part of the third argument:
 
 ```js
+import { MessageFormat } from "messageformat@next";
+
 const mf = new MessageFormat(
   ["en"],
   "{messageformat :uppercase}",

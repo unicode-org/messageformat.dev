@@ -1,6 +1,5 @@
 import lume from "lume/mod.ts";
 import tailwindcss from "lume/plugins/tailwindcss.ts";
-import postcss from "lume/plugins/postcss.ts";
 import jsx from "lume/plugins/jsx.ts";
 import esbuild from "lume/plugins/esbuild.ts";
 import inline from "lume/plugins/inline.ts";
@@ -46,7 +45,6 @@ site.add("src/utils.ts");
 site.add("src/playground.ts");
 
 site.use(tailwindcss());
-site.use(postcss());
 site.use(jsx({}));
 site.use(inline());
 site.use(nav({}));

@@ -3,7 +3,7 @@ layout: layout.vto
 ---
 
 <header class="fixed top-0 w-full h-16 z-30">
-  <svg
+   <svg
     class="rotate-180 -z-10 absolute top-0 left-0"
     height="100%"
     width="100%"
@@ -20,99 +20,47 @@ layout: layout.vto
     <path d="M0 0 Q 500 10 1000 0 L 1000 10 L 0 10 Z" />
   </svg>
   <nav class="z-20 h-full">
-    <div
-      class="h-full flex items-center justify-between pb-2 pt-1 sm:pt-2 px-6 sm:px-8"
-    >
+    <div class="h-full flex items-center justify-between pb-2 pt-1 sm:pt-2 px-6 sm:px-8 ">
       <div class="flex gap-2 items-center">
-        <button
-          id="sidebar_open"
-          class="md:hidden hover:bg-gray-50/15 p-2 -ml-2 rounded-full inline-block active:bg-gray-100/25"
-        >
-          <svg
-            class="text-white w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-            title="Open sidebar"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16m-7 6h7"
-            >
-            </path>
+        <button id="sidebar_open" class="md:hidden hover:bg-gray-50/15 p-2 -ml-2 rounded-full inline-block active:bg-gray-100/25">
+          <svg class="text-white w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" title="Open sidebar">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
           </svg>
         </button>
         <div class="flex items-center gap-3">
-          <img
-            src="/static/logos/no-padding/mf2-logo-only.svg"
-            class="size-10"
-          />
+          <img src="/static/logos/no-padding/mf2-logo-only.svg" class="size-10" />
           <div class="flex flex-col sm:flex-row sm:items-baseline">
-            <a
-              href="/"
-              class="
-                text-white
-                font-serif font-bold text-2xl hover:underline underline-offset-4
-              "
-            >MessageFormat 2</a>
+            <a href="/" class="text-white
+            font-serif font-bold text-2xl hover:underline underline-offset-4">MessageFormat 2</a>
             <span class="mx-2 text-white select-none hidden sm:block">/</span>
             <span class="text-white text-lg leading-4">Docs</span>
           </div>
         </div>
       </div>
       <ul class="flex">
-        <li class="mx-2 hidden sm:block">
-          <a
-            href="/playground/"
-            class="px-4 py-2 font-bold text-blue-600 rounded-full bg-gray-50 hover:bg-blue-200 active:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-white"
-          >Playground</a>
-        </li>
+        <li class="mx-2 hidden sm:block"><a href="/playground/" class="px-4 py-2 font-bold text-blue-600 rounded-full bg-gray-50 hover:bg-blue-200 active:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-white">Playground</a></li>
       </ul>
     </div>
   </nav>
 </header>
 
 <div id="content" class="flex gap-4 mt-24">
-  <div
-    id="sidebar_backdrop"
-    class="fixed inset-0 bg-black/50 z-10 hidden md:hidden"
-  >
-  </div>
-  <nav
-    id="sidebar"
-    class="fixed w-80 top-0 bg-white md:bg-blue-50/60 bottom-0 hidden md:block z-20"
-  >
-    <div class="px-6 py-8 mt-16 overflow-y-auto h-full">
+  <div id="sidebar_backdrop" class="fixed inset-0 bg-black/50 z-10 hidden md:hidden"></div>
+  <nav id="sidebar" class="fixed w-80 top-0 bg-white md:bg-blue-50/60 bottom-0 hidden md:block z-20">
+    <div class="px-6 py-8 mt-16 overflow-y-auto h-full">        
       <ul class="space-y-2">
         {{ for each of sidebar }}
           {{ if typeof each === "string" }}
             <li>
-              <a
-                href="{{ search.data(each).url }}"
-                class="block text-black hover:underline"
-              >{{
-                search.data(each).sidebar_title ||
-                  search.data(each).title
-              }}</a>
+              <a href="{{ search.data(each).url }}" class="block text-black hover:underline">{{ search.data(each).sidebar_title || search.data(each).title }}</a>
             </li>
           {{ else }}
             <li class="pt-3">
-              <span
-                class="block text-sm text-black font-bold font-serif mb-1"
-              >{{ each.section }}</span>
+              <span class="block text-sm text-black font-bold font-serif mb-1">{{ each.section }}</span>
               <ul class="space-y-1">
                 {{ for item of each.children }}
                   <li>
-                    <a
-                      href="{{ search.data(item).url }}"
-                      class="block text-black hover:underline"
-                    >{{
-                      search.data(item).sidebar_title ||
-                        search.data(item).title
-                    }}</a>
+                    <a href="{{ search.data(item).url }}" class="block text-black hover:underline">{{ search.data(item).sidebar_title || search.data(item).title }}</a>
                   </li>
                 {{ /for }}
               </ul>
@@ -126,38 +74,21 @@ layout: layout.vto
   <div class="md:pl-80 w-full flex justify-center">
     <main class="flex w-full -mx-8 flex-col-reverse xl:flex-row">
       <div class="max-w-[90ch] overflow-x-hidden w-full px-6 sm:px-8 md:px-16">
-        <h1
-          class="text-4xl font-serif font-bold text-black border-b border-gray-200 pb-2 mb-8"
-        >
-          {{ title }}
-        </h1>
+        <h1 class="text-4xl font-serif font-bold text-black border-b border-gray-200 pb-2 mb-8">{{ title }}</h1>
         <div class="markdown mb-24">{{ content }}</div>
         {{ comp.footer({ padding: "" }) }}
       </div>
-      <details
-        id="toc"
-        class="xl:flex-grow-0 xl:flex-shrink-0 xl:basis-1/5 bg-gray-100 xl:bg-transparent rounded-md mx-6 sm:mx-8 md:mx-16 mb-6"
-      >
-        <summary class="text-lg font-bold text-black xl:hidden px-4 py-2">
-          On this page
-        </summary>
-        <ul
-          class="pl-4 xl:border-l border-gray-200 xl:fixed xl:top-24 border-t xl:border-t-0 py-3 px-3 xl:py-0 xl:pr-8 space-y-1"
-        >
+      <details id="toc" class="xl:flex-grow-0 xl:flex-shrink-0 xl:basis-1/5 bg-gray-100 xl:bg-transparent rounded-md mx-6 sm:mx-8 md:mx-16 mb-6">
+        <summary class="text-lg font-bold text-black xl:hidden px-4 py-2">On this page</summary>
+        <ul class="pl-4 xl:border-l border-gray-200 xl:fixed xl:top-24 border-t xl:border-t-0 py-3 px-3 xl:py-0 xl:pr-8 space-y-1">
           {{ for each of toc }}
             <li>
-              <a
-                href="#{{ each.slug }}"
-                class="block text-black hover:underline leading-5"
-              >{{ each.text }}</a>
+              <a href="#{{ each.slug }}" class="block text-black hover:underline leading-5">{{ each.text }}</a>
               {{ if each.children }}
                 <ul class="pl-4">
                   {{ for item of each.children }}
                     <li>
-                      <a
-                        href="#{{ item.slug }}"
-                        class="block text-black hover:underline"
-                      >{{ item.text }}</a>
+                      <a href="#{{ item.slug }}" class="block text-black hover:underline">{{ item.text }}</a>
                     </li>
                   {{ /for }}
                 </ul>
@@ -174,9 +105,7 @@ layout: layout.vto
   function toggle() {
     sidebar.classList.toggle("hidden");
     sidebar_backdrop.classList.toggle("hidden");
-    sidebar_open.title = sidebar.classList.contains("hidden")
-      ? "Open sidebar"
-      : "Close sidebar";
+    sidebar_open.title = sidebar.classList.contains("hidden") ? "Open sidebar" : "Close sidebar";
   }
   sidebar_open.addEventListener("click", toggle);
   sidebar_backdrop.addEventListener("click", toggle);

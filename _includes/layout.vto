@@ -6,20 +6,16 @@
     <title>{{ if title }}{{ title }} | {{ /if }}MessageFormat 2</title>
     <link rel="stylesheet" href="/static/css/style.css">
     {{ if url == '/' }}
-      <script src="/static/js/leader-line.min.js" defer></script>
-      <script src="/src/utils.js" inline></script>
+    <script src="/static/js/leader-line.min.js" defer></script>
+    <script src="/src/utils.js" inline></script>
     {{ /if }}
     {{ if url.startsWith('/docs/') }}
-      <script src="/src/interactive.js" type="module"></script>
+    <script src="/src/interactive.js" type="module"></script>
     {{ /if }}
     {{ if url == '/playground/' }}
-      <script src="/src/playground.js" inline></script>
+    <script src="/src/playground.js" inline></script>
     {{ /if }}
-    <link
-      rel="icon"
-      href="/static/logos/favicon.ico"
-      type="image/vnd.microsoft.icon"
-    >
+    <link rel="icon" href="/static/logos/favicon.ico" type="image/vnd.microsoft.icon">
     <link rel="icon" href="/static/logos/favicon.svg" type="image/svg+xml">
   </head>
   <body>

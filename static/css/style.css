@@ -1,31 +1,63 @@
 @import "tailwindcss";
 
 @theme {
-  --font-mono: 'Fira Code', monospace;
+  --font-mono: "Fira Code", monospace;
   --font-handwritten: Kalam, cursive;
 }
 
 @font-face {
-  font-family: 'Kalam';
+  font-family: "Kalam";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('/static/fonts/Kalam-400-latin-ext2.woff2') format('woff2');
-  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  src: url("/static/fonts/Kalam-400-latin-ext2.woff2") format("woff2");
+  unicode-range:
+    U+0100-02AF,
+    U+0304,
+    U+0308,
+    U+0329,
+    U+1E00-1E9F,
+    U+1EF2-1EFF,
+    U+2020,
+    U+20A0-20AB,
+    U+20AD-20C0,
+    U+2113,
+    U+2C60-2C7F,
+    U+A720-A7FF;
 }
 
 @font-face {
-  font-family: 'Kalam';
+  font-family: "Kalam";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('/static/fonts/Kalam-400-latin3.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  src: url("/static/fonts/Kalam-400-latin3.woff2") format("woff2");
+  unicode-range:
+    U+0000-00FF,
+    U+0131,
+    U+0152-0153,
+    U+02BB-02BC,
+    U+02C6,
+    U+02DA,
+    U+02DC,
+    U+0304,
+    U+0308,
+    U+0329,
+    U+2000-206F,
+    U+2074,
+    U+20AC,
+    U+2122,
+    U+2191,
+    U+2193,
+    U+2212,
+    U+2215,
+    U+FEFF,
+    U+FFFD;
 }
 
 @font-face {
-  font-family: 'Fira Code VF';
-  src: url('woff2/FiraCode-VF.woff2') format('woff2-variations');
+  font-family: "Fira Code VF";
+  src: url("woff2/FiraCode-VF.woff2") format("woff2-variations");
   font-weight: 300 700;
   font-style: normal;
 }
@@ -68,20 +100,22 @@
 }
 
 .markdown {
-  @apply text-lg text-black
+  @apply text-lg text-black;
 }
 
 .markdown h1 {
   @apply text-red-600;
-  content: "Don't use h1 in markdown"
+  content: "Don't use h1 in markdown";
 }
 
 .markdown h2 {
-  @apply scroll-mt-20 text-3xl font-bold font-serif text-black border-b border-gray-200 pb-1 mt-6 mb-4;
+  @apply scroll-mt-20 text-3xl font-bold font-serif text-black border-b
+    border-gray-200 pb-1 mt-6 mb-4;
 }
 
 .markdown h3 {
-  @apply scroll-mt-20 text-2xl font-bold font-serif text-black border-b border-gray-200 mt-6 mb-4;
+  @apply scroll-mt-20 text-2xl font-bold font-serif text-black border-b
+    border-gray-200 mt-6 mb-4;
 }
 
 .markdown h4 {
@@ -97,7 +131,11 @@
 }
 
 .markdown a.button {
-  @apply inline-block px-6 md:px-8 py-3 md:py-4 text-lg font-bold text-white rounded-full bg-gradient-to-br from-blue-400 to-blue-600 hover:from-blue-500 hover:to-blue-700 active:from-blue-700 active:to-blue-500 focus:from-blue-700 focus:to-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-white;
+  @apply inline-block px-6 md:px-8 py-3 md:py-4 text-lg font-bold text-white
+    rounded-full bg-gradient-to-br from-blue-400 to-blue-600 hover:from-blue-500
+    hover:to-blue-700 active:from-blue-700 active:to-blue-500
+    focus:from-blue-700 focus:to-blue-500 focus:outline-none focus:ring-2
+    focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-white;
 }
 
 .markdown .anchor {
@@ -107,7 +145,7 @@
 .markdown h2:hover .anchor,
 .markdown h3:hover .anchor,
 .markdown h4:hover .anchor {
-  @apply inline-block
+  @apply inline-block;
 }
 
 .markdown blockquote {
@@ -130,7 +168,7 @@
   @apply my-0.5;
 }
 
-.markdown :not(pre)>code {
+.markdown :not(pre) > code {
   @apply bg-gray-100 p-1 rounded font-mono;
   font-variant-ligatures: none;
 }
@@ -157,13 +195,14 @@
 }
 
 .markdown mf2-interactive:not(.ready)::before {
-  @apply text-xs h-6 flex items-center px-4 justify-between font-medium uppercase;
+  @apply text-xs h-6 flex items-center px-4 justify-between font-medium
+    uppercase;
   content: "TRY IT OUT";
 }
 
 .markdown mf2-interactive:not(.ready)::after {
   @apply py-2 px-4 text-base block text-gray-400;
-  content: "Loading..."
+  content: "Loading...";
 }
 
 .markdown mf2-interactive:not(.ready) pre {
@@ -183,24 +222,31 @@
 }
 
 .markdown mf2-interactive .header div {
-  @apply flex items-center gap-4
+  @apply flex items-center gap-4;
 }
 
 .markdown mf2-interactive .header a, button {
-  @apply flex items-center gap-1
+  @apply flex items-center gap-1;
 }
 
 .markdown mf2-interactive .header button {
-  @apply underline underline-offset-4 hover:text-blue-600 disabled:no-underline disabled:text-gray-500;
+  @apply underline underline-offset-4 hover:text-blue-600 disabled:no-underline
+    disabled:text-gray-500;
 }
 
-.markdown mf2-interactive textarea, .markdown mf2-interactive highlighted-textarea div, .markdown mf2-interactive highlighted-textarea textarea {
-  @apply bg-gray-100 p-4 w-full font-mono block text-base outline-none rounded-none focus:ring-2 focus:ring-inset focus:ring-blue-500 focus:ring-black/50;
+.markdown mf2-interactive textarea,
+.markdown mf2-interactive highlighted-textarea div,
+.markdown mf2-interactive highlighted-textarea textarea {
+  @apply bg-gray-100 p-4 w-full font-mono block text-base outline-none
+    rounded-none focus:ring-2 focus:ring-inset focus:ring-blue-500
+    focus:ring-black/50;
   field-sizing: content;
   font-variant-ligatures: none;
 }
 
-.markdown mf2-interactive textarea.data, .markdown mf2-interactive highlighted-textarea.data div, .markdown mf2-interactive highlighted-textarea.data textarea {
+.markdown mf2-interactive textarea.data,
+.markdown mf2-interactive highlighted-textarea.data div,
+.markdown mf2-interactive highlighted-textarea.data textarea {
   @apply border-t px-4 py-2;
 }
 
@@ -229,18 +275,17 @@ highlighted-textarea [data-textarea] {
 }
 
 .highlighted, mf2-interactive code {
-  color: #3B3B3B;
+  color: #3b3b3b;
 }
 
 .highlighted ::highlight(keyword) {
-  color: #0000FF;
+  color: #0000ff;
 }
 
 .highlighted ::selection {
   color: currentcolor;
   background-color: #add6ff;
 }
-
 
 .highlighted ::highlight(variable) {
   color: #001080;
@@ -251,7 +296,7 @@ highlighted-textarea [data-textarea] {
 }
 
 .highlighted ::highlight(string) {
-  color: #A31515;
+  color: #a31515;
 }
 
 .highlighted ::highlight(number) {
@@ -259,7 +304,7 @@ highlighted-textarea [data-textarea] {
 }
 
 .highlighted ::highlight(function) {
-  color: #795E26;
+  color: #795e26;
 }
 
 .highlighted ::highlight(tag) {
@@ -267,11 +312,11 @@ highlighted-textarea [data-textarea] {
 }
 
 .highlighted ::highlight(attribute) {
-  color: #E50000;
+  color: #e50000;
 }
 
 .highlighted ::highlight(escape) {
-  color: #EE0000;
+  color: #ee0000;
 }
 
 .highlighted ::highlight(brackets1) {
@@ -289,9 +334,9 @@ highlighted-textarea [data-textarea] {
 .highlighted ::highlight(error) {
   text-decoration: #f85149 wavy 0.5px underline;
   text-decoration-skip-ink: none;
-  background-color: rgba(248,0,0, 0.05);
+  background-color: rgba(248, 0, 0, 0.05);
 }
 
 .highlighted ::highlight(error-hover) {
-  background-color: rgba(248,0,0, 0.1);
+  background-color: rgba(248, 0, 0, 0.1);
 }

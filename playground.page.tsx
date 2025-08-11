@@ -2,8 +2,7 @@ export const layout = "layout.vto";
 
 export const title = "Playground";
 
-// deno-lint-ignore no-explicit-any
-export default function IndexPage({ comp }: any) {
+export default function IndexPage({ comp }: Lume.Data) {
   return (
     <>
       <header class="relative h-24 z-30">
@@ -57,6 +56,7 @@ export default function IndexPage({ comp }: any) {
               </div>
               <button
                 id="share"
+                type="button"
                 class="inline-block px-3 md:px-4 py-1 md:py-2 text-md font-bold text-blue-600 rounded-full bg-gray-50 hover:bg-blue-200 active:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-white"
               >
                 Share

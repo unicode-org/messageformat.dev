@@ -1,6 +1,9 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --font-mono: 'Fira Code', monospace;
+  --font-handwritten: Kalam, cursive;
+}
 
 @font-face {
   font-family: 'Kalam';
@@ -62,20 +65,6 @@
 
 * {
   tab-size: 2;
-}
-
-@keyframes pulse-bg-blue {
-  0% {
-    @apply bg-blue-200 p-2 m-1
-  }
-
-  50% {
-    @apply bg-blue-100 p-3 m-0
-  }
-
-  100% {
-    @apply bg-blue-200 p-2 m-1
-  }
 }
 
 .markdown {
@@ -143,10 +132,12 @@
 
 .markdown :not(pre)>code {
   @apply bg-gray-100 p-1 rounded font-mono;
+  font-variant-ligatures: none;
 }
 
 .markdown pre {
   @apply bg-gray-100 p-4 rounded font-mono text-base overflow-y-auto;
+  font-variant-ligatures: none;
 }
 
 .markdown table {
@@ -204,8 +195,9 @@
 }
 
 .markdown mf2-interactive textarea, .markdown mf2-interactive highlighted-textarea div, .markdown mf2-interactive highlighted-textarea textarea {
-  @apply bg-gray-100 p-4 w-full font-mono block text-base outline-none rounded-none focus:ring-2 focus:ring-inset focus:ring-blue-500 focus:ring-opacity-50;
+  @apply bg-gray-100 p-4 w-full font-mono block text-base outline-none rounded-none focus:ring-2 focus:ring-inset focus:ring-blue-500 focus:ring-black/50;
   field-sizing: content;
+  font-variant-ligatures: none;
 }
 
 .markdown mf2-interactive textarea.data, .markdown mf2-interactive highlighted-textarea.data div, .markdown mf2-interactive highlighted-textarea.data textarea {
@@ -218,6 +210,7 @@
 
 .markdown mf2-interactive .error {
   @apply font-mono text-red-600;
+  font-variant-ligatures: none;
 }
 
 mf2-interactive {

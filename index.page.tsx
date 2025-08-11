@@ -1,11 +1,8 @@
-import { ComponentChildren } from "preact";
-
 export const layout = "layout.vto";
 
 export const title = "Home";
 
-// deno-lint-ignore no-explicit-any
-export default function IndexPage({ comp }: any) {
+export default function IndexPage({ comp }: Lume.Data) {
   return (
     <>
       <div class="bg-blue-50">
@@ -158,7 +155,7 @@ export function Head() {
   );
 }
 
-export function AdParagraph(props: { children: ComponentChildren }) {
+export function AdParagraph(props: { children: JSX.Children }) {
   return (
     <p class="max-w-4xl">
       {props.children}
@@ -400,8 +397,7 @@ function PluralizationCode() {
             max="5"
             step="1"
             value="3"
-          >
-          </input>
+          />
         </div>
       </CodeBlock>
       <div class="flex justify-center items-center">
@@ -433,7 +429,7 @@ onReady(() => {
   );
 }
 
-function Example(props: { children: ComponentChildren }) {
+function Example(props: { children: JSX.Children }) {
   return (
     <section class="mt-32 grid md:grid-cols-2 gap-12 px-4">
       {props.children}
@@ -442,7 +438,7 @@ function Example(props: { children: ComponentChildren }) {
 }
 
 function ExampleProse(
-  props: { title: string; children: ComponentChildren },
+  props: { title: string; children: JSX.Children },
 ) {
   return (
     <div class="max-w-md">
@@ -457,7 +453,7 @@ function ExampleProse(
 }
 
 function CodeBlock(
-  props: { class?: string; label?: string; children: ComponentChildren },
+  props: { class?: string; label?: string; children: JSX.Children },
 ) {
   return (
     <pre class={`bg-gray-100 p-4 md:rounded-lg relative ${props.class ?? ""}`}>

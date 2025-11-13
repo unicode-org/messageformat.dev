@@ -27,7 +27,7 @@ once (unless further changes occur to the API).
 ```bash
 git clone https://github.com/unicode-org/icu.git
 cd icu
-../icu4c/source/runConfigureICU Linux/clang  --disable-renaming \
+icu4c/source/runConfigureICU Linux/clang  --disable-renaming \
     --prefix=$HOME/icu76
 make          # or make -j8 to build in parallel on 8 cores
 make install

@@ -19,3 +19,6 @@ sidebar:
       - docs/integration/c/
       - docs/integration/cpp/
       - docs/lsp/
+  - section: Frontend Frameworks
+    children:
+      - docs/frameworks/angular/

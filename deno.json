@@ -1,8 +1,8 @@
 {
   "imports": {
     "@nic/local-highlight-registry": "jsr:@nic/local-highlight-registry@^0.1.0",
-    "lume/": "https://deno.land/x/lume@v2.3.3/",
-    "preact": "npm:preact"
+    "lume/": "https://deno.land/x/lume@v3.0.9/",
+    "lume/jsx-runtime": "https://deno.land/x/ssx@v0.1.12/jsx-runtime.ts"
   },
   "tasks": {
     "lume": "echo \"import 'lume/cli.ts'\" | deno run -A -",
@@ -14,7 +14,21 @@
       "lume/types.ts"
     ],
     "jsx": "react-jsx",
-    "jsxImportSource": "preact"
+    "jsxImportSource": "lume"
   },
-  "license": "Unicode-3.0"
+  "license": "Unicode-3.0",
+  "unstable": [
+    "temporal",
+    "fmt-component"
+  ],
+  "lint": {
+    "plugins": [
+      "https://deno.land/x/lume@v3.0.9/lint.ts"
+    ],
+    "rules": {
+      "exclude": [
+        "no-import-prefix"
+      ]
+    }
+  }
 }

@@ -1,7 +1,6 @@
 import lume from "lume/mod.ts";
 import tailwindcss from "lume/plugins/tailwindcss.ts";
-import postcss from "lume/plugins/postcss.ts";
-import jsx from "lume/plugins/jsx_preact.ts";
+import jsx from "lume/plugins/jsx.ts";
 import esbuild from "lume/plugins/esbuild.ts";
 import inline from "lume/plugins/inline.ts";
 import nav from "lume/plugins/nav.ts";
@@ -11,7 +10,6 @@ import anchor from "npm:markdown-it-anchor@9";
 
 import AUTOLINK_REFERENCES from "./references.json" with { type: "json" };
 
-import tailwindConfig from "./tailwind.config.ts";
 import autolink from "./_plugins/autolink.ts";
 import tableWrap from "./_plugins/table-wrap.ts";
 
@@ -36,21 +34,18 @@ const site = lume({ location: new URL("https://messageformat.dev") }, {
   },
 });
 
-site.copy("static/fonts");
-site.copy("static/js");
-site.copy("static/logos");
-site.copy("static/textarea");
-site.copy("static/textarea2");
-
-site.use(tailwindcss({ options: tailwindConfig }));
-site.use(postcss());
-site.use(jsx({}));
 site.use(
   esbuild({
-    extensions: [".entry.ts"],
     options: { minify: false, keepNames: false },
   }),
 );
+site.add("static");
+site.add("src/interactive.ts");
+site.add("src/utils.ts");
+site.add("src/playground.ts");
+
+site.use(tailwindcss());
+site.use(jsx({}));
 site.use(inline());
 site.use(nav({}));
 site.use(toc({ anchor: false }));

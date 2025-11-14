@@ -2,8 +2,7 @@ export const layout = "layout.vto";
 
 export const title = "Playground";
 
-// deno-lint-ignore no-explicit-any
-export default function IndexPage({ comp }: any) {
+export default function IndexPage({ comp }: Lume.Data) {
   return (
     <>
       <header class="relative h-24 z-30">
@@ -57,6 +56,7 @@ export default function IndexPage({ comp }: any) {
               </div>
               <button
                 id="share"
+                type="button"
                 class="inline-block px-3 md:px-4 py-1 md:py-2 text-md font-bold text-blue-600 rounded-full bg-gray-50 hover:bg-blue-200 active:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-white"
               >
                 Share
@@ -110,7 +110,7 @@ export default function IndexPage({ comp }: any) {
           <highlighted-textarea id="message" class="highlighted">
             <textarea
               placeholder="Type your message here..."
-              class="w-full h-full resize-none font-mono p-4 bg-white border rounded-lg outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+              class="w-full h-full resize-none font-mono p-4 bg-white border border-gray-200 rounded-lg outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
             >
               {`Hello {$name}!`}
             </textarea>
@@ -123,7 +123,7 @@ export default function IndexPage({ comp }: any) {
           </div>
           <div
             id="message-popup"
-            class="absolute px-2 py-1 border bg-gray-100 rounded max-w-[90%] md:max-w-[70ch] font-mono"
+            class="absolute px-2 py-1 border border-gray-200 bg-gray-100 rounded max-w-[90%] md:max-w-[70ch] font-mono"
             hidden
           >
           </div>
@@ -136,7 +136,7 @@ export default function IndexPage({ comp }: any) {
           </label>
           <highlighted-textarea id="data" class="highlighted">
             <textarea
-              class="w-full h-full resize-none font-mono p-4 bg-white border rounded-lg outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+              class="w-full h-full resize-none font-mono p-4 bg-white border border-gray-200 rounded-lg outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
               placeholder="Type your data here..."
             >
               {`{\n  "name": "User"\n}`}
@@ -154,7 +154,7 @@ export default function IndexPage({ comp }: any) {
           <h2 class="text-xl font-bold font-serif px-2 pb-1 text-black">
             Output
           </h2>
-          <div class="border rounded-md p-6 text-lg min-h-20" id="output">
+          <div class="border border-gray-200 rounded-md p-6 text-lg min-h-20" id="output">
             {`Hello User!`}
           </div>
           <pre
@@ -223,49 +223,49 @@ export default function IndexPage({ comp }: any) {
             <table class="w-full text-left border-collapse">
               <thead>
                 <tr>
-                  <th class="border px-2">Tag</th>
-                  <th class="border px-2">Description</th>
+                  <th class="border border-gray-200 px-2">Tag</th>
+                  <th class="border border-gray-200 px-2">Description</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td class="border px-2">
+                  <td class="border border-gray-200 px-2">
                     <code>bold</code>
                   </td>
-                  <td class="border px-2">
+                  <td class="border border-gray-200 px-2">
                     Make the contained message <b>bold</b>.
                   </td>
                 </tr>
                 <tr>
-                  <td class="border px-2">
+                  <td class="border border-gray-200 px-2">
                     <code>italic</code>
                   </td>
-                  <td class="border px-2">
+                  <td class="border border-gray-200 px-2">
                     Make the contained message <i>italic</i>.
                   </td>
                 </tr>
                 <tr>
-                  <td class="border px-2">
+                  <td class="border border-gray-200 px-2">
                     <code>error</code>
                   </td>
-                  <td class="border px-2">
+                  <td class="border border-gray-200 px-2">
                     Make the contained look{" "}
                     <span class="text-red-600">errored</span>.
                   </td>
                 </tr>
                 <tr>
-                  <td class="border px-2">
+                  <td class="border border-gray-200 px-2">
                     <code>link</code>
                   </td>
-                  <td class="border px-2">
+                  <td class="border border-gray-200 px-2">
                     Add a link, pointing to the <code>to</code> option.
                   </td>
                 </tr>
                 <tr>
-                  <td class="border px-2">
+                  <td class="border border-gray-200 px-2">
                     <code>star-icon</code>
                   </td>
-                  <td class="border px-2">
+                  <td class="border border-gray-200 px-2">
                     Display a star icon (⭐).
                   </td>
                 </tr>

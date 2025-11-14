@@ -1,6 +1,29 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --font-mono: 'Fira Code', monospace;
+  --font-handwritten: Kalam, cursive;
+
+  @keyframes pulse-bg-blue {
+    0% {
+      background-color: var(--color-blue-200);
+      padding: 0.5rem;
+      margin: 0.25rem;
+    }
+
+    50% {
+      background-color: var(--color-blue-100);
+      padding: 0.75rem;
+      margin: 0;
+    }
+
+    100% {
+      background-color: var(--color-blue-200);
+      padding: 0.5rem;
+      margin: 0.25rem;
+    }
+  }
+}
 
 @font-face {
   font-family: 'Kalam';
@@ -64,20 +87,6 @@
   tab-size: 2;
 }
 
-@keyframes pulse-bg-blue {
-  0% {
-    @apply bg-blue-200 p-2 m-1
-  }
-
-  50% {
-    @apply bg-blue-100 p-3 m-0
-  }
-
-  100% {
-    @apply bg-blue-200 p-2 m-1
-  }
-}
-
 .markdown {
   @apply text-lg text-black
 }
@@ -133,7 +142,10 @@
   @apply list-decimal pl-7 my-4;
 }
 
-.markdown ul ul, .markdown ul ol, .markdown ol ul, .markdown ol ol {
+.markdown ul ul,
+.markdown ul ol,
+.markdown ol ul,
+.markdown ol ol {
   @apply my-0;
 }
 
@@ -143,10 +155,12 @@
 
 .markdown :not(pre)>code {
   @apply bg-gray-100 p-1 rounded font-mono;
+  font-variant-ligatures: none;
 }
 
 .markdown pre {
   @apply bg-gray-100 p-4 rounded font-mono text-base overflow-y-auto;
+  font-variant-ligatures: none;
 }
 
 .markdown table {
@@ -157,12 +171,13 @@
   @apply my-4 overflow-x-auto w-full;
 }
 
-.markdown table td, .markdown table th {
+.markdown table td,
+.markdown table th {
   @apply border border-gray-300 p-2;
 }
 
 .markdown mf2-interactive {
-  @apply border rounded overflow-clip my-4;
+  @apply border border-gray-200 rounded overflow-clip my-4;
 }
 
 .markdown mf2-interactive:not(.ready)::before {
@@ -180,7 +195,7 @@
 }
 
 .markdown mf2-interactive:not(.ready) pre:not(:first-of-type) {
-  @apply border-t py-2;
+  @apply border-t border-gray-200 py-2;
 }
 
 .markdown mf2-interactive .header {
@@ -203,13 +218,18 @@
   @apply underline underline-offset-4 hover:text-blue-600 disabled:no-underline disabled:text-gray-500;
 }
 
-.markdown mf2-interactive textarea, .markdown mf2-interactive highlighted-textarea div, .markdown mf2-interactive highlighted-textarea textarea {
-  @apply bg-gray-100 p-4 w-full font-mono block text-base outline-none rounded-none focus:ring-2 focus:ring-inset focus:ring-blue-500 focus:ring-opacity-50;
+.markdown mf2-interactive textarea,
+.markdown mf2-interactive highlighted-textarea div,
+.markdown mf2-interactive highlighted-textarea textarea {
+  @apply bg-gray-100 p-4 w-full font-mono block text-base outline-none rounded-none focus:ring-2 focus:ring-inset focus:ring-blue-500 focus:ring-black/50;
   field-sizing: content;
+  font-variant-ligatures: none;
 }
 
-.markdown mf2-interactive textarea.data, .markdown mf2-interactive highlighted-textarea.data div, .markdown mf2-interactive highlighted-textarea.data textarea {
-  @apply border-t px-4 py-2;
+.markdown mf2-interactive textarea.data,
+.markdown mf2-interactive highlighted-textarea.data div,
+.markdown mf2-interactive highlighted-textarea.data textarea {
+  @apply border-t border-gray-200 px-4 py-2;
 }
 
 .markdown mf2-interactive .output {
@@ -218,6 +238,7 @@
 
 .markdown mf2-interactive .error {
   @apply font-mono text-red-600;
+  font-variant-ligatures: none;
 }
 
 mf2-interactive {
@@ -235,7 +256,8 @@ highlighted-textarea [data-textarea] {
   @apply resize-y;
 }
 
-.highlighted, mf2-interactive code {
+.highlighted,
+mf2-interactive code {
   color: #3B3B3B;
 }
 
@@ -296,9 +318,9 @@ highlighted-textarea [data-textarea] {
 .highlighted ::highlight(error) {
   text-decoration: #f85149 wavy 0.5px underline;
   text-decoration-skip-ink: none;
-  background-color: rgba(248,0,0, 0.05);
+  background-color: rgba(248, 0, 0, 0.05);
 }
 
 .highlighted ::highlight(error-hover) {
-  background-color: rgba(248,0,0, 0.1);
+  background-color: rgba(248, 0, 0, 0.1);
 }

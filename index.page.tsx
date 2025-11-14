@@ -1,11 +1,8 @@
-import { ComponentChildren } from "preact";
-
 export const layout = "layout.vto";
 
 export const title = "Home";
 
-// deno-lint-ignore no-explicit-any
-export default function IndexPage({ comp }: any) {
+export default function IndexPage({ comp }: Lume.Data) {
   return (
     <>
       <div class="bg-blue-50">
@@ -120,7 +117,7 @@ export default function IndexPage({ comp }: any) {
               what are you waiting for?
             </div>
             <div class="pt-1 flex justify-center">
-              <div class="p-2 animate-pulse-bg-blue rounded-full">
+              <div class="p-2 animate-[pulse-bg-blue_2s_infinite_ease] rounded-full">
                 <a
                   href="/docs/quick-start"
                   class="opacity-100! inline-block px-8 md:px-12 py-5 md:py-7 text-2xl font-bold text-white rounded-full bg-gradient-to-br from-blue-400 to-blue-600 hover:from-blue-500 hover:to-blue-700 active:from-blue-700 active:to-blue-500 focus:from-blue-700 focus:to-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-white"
@@ -158,7 +155,7 @@ export function Head() {
   );
 }
 
-export function AdParagraph(props: { children: ComponentChildren }) {
+export function AdParagraph(props: { children: JSX.Children }) {
   return (
     <p class="max-w-4xl">
       {props.children}
@@ -227,7 +224,7 @@ export function Examples() {
           <div class="flex justify-center items-center">
             <ArrowDownIcon />
           </div>
-          <div class="border-y md:border-x md:rounded-md p-6 text-lg">
+          <div class="border-y border-gray-200 md:border-x md:rounded-md p-6 text-lg">
             It is <span id="time">10:41:03</span>.
           </div>
           <script
@@ -301,7 +298,7 @@ function ReplacementVariableCode() {
       <div class="flex justify-center items-center">
         <ArrowDownIcon />
       </div>
-      <div class="border-y md:border-x md:rounded-md p-6 text-lg">
+      <div class="border-y border-gray-200 md:border-x md:rounded-md p-6 text-lg">
         Hello{" "}
         <span class="relative">
           <span class="text-orange-600 relative inline-block" id="name2">
@@ -356,7 +353,7 @@ function MarkupCode() {
       <div class="flex justify-center items-center">
         <ArrowDownIcon />
       </div>
-      <div class="border-y md:border-x md:rounded-md p-6 text-lg">
+      <div class="border-y border-gray-200 md:border-x md:rounded-md p-6 text-lg">
         This is <strong>important</strong>.
       </div>
     </div>
@@ -400,15 +397,14 @@ function PluralizationCode() {
             max="5"
             step="1"
             value="3"
-          >
-          </input>
+          />
         </div>
       </CodeBlock>
       <div class="flex justify-center items-center">
         <ArrowDownIcon />
       </div>
       <div
-        class="border-y md:border-x md:rounded-md p-6 text-lg"
+        class="border-y border-gray-200 md:border-x md:rounded-md p-6 text-lg"
         id="count-output"
       >
         3 items.
@@ -433,7 +429,7 @@ onReady(() => {
   );
 }
 
-function Example(props: { children: ComponentChildren }) {
+function Example(props: { children: JSX.Children }) {
   return (
     <section class="mt-32 grid md:grid-cols-2 gap-12 px-4">
       {props.children}
@@ -442,7 +438,7 @@ function Example(props: { children: ComponentChildren }) {
 }
 
 function ExampleProse(
-  props: { title: string; children: ComponentChildren },
+  props: { title: string; children: JSX.Children },
 ) {
   return (
     <div class="max-w-md">
@@ -457,7 +453,7 @@ function ExampleProse(
 }
 
 function CodeBlock(
-  props: { class?: string; label?: string; children: ComponentChildren },
+  props: { class?: string; label?: string; children: JSX.Children },
 ) {
   return (
     <pre class={`bg-gray-100 p-4 md:rounded-lg relative ${props.class ?? ""}`}>

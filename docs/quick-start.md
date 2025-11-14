@@ -25,7 +25,7 @@ You can also try out MessageFormat 2 in the online playground:
 MessageFormat 2 is developed in the
 [Message Format Working Group](https://github.com/unicode-org/message-format-wg)
 of the Unicode Consortium. The complete specification is available
-[on unicode.org](https://www.unicode.org/reports/tr35/tr35-73/tr35-messageFormat.html).
+[on unicode.org](https://www.unicode.org/reports/tr35/tr35-messageFormat.html).
 
 ## Basic Syntax
 

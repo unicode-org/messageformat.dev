@@ -159,7 +159,7 @@
 }
 
 .markdown pre {
-  @apply bg-gray-100 p-4 rounded font-mono text-base overflow-y-auto;
+  @apply bg-gray-100 p-4 rounded font-mono text-base overflow-y-auto my-4;
   font-variant-ligatures: none;
 }
 

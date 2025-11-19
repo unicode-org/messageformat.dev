@@ -17,7 +17,7 @@ In an existing SvelteKit project, install the SvelteKit integration package
 together with the MF2 engine, and `@sveltekit-i18n/base`.
 
 ```bash
-npm install sveltekit-mf2 @sveltekit-i18n/base messageformat
+npm install sveltekit-mf2 @sveltekit-i18n/base
 ```
 
 You can also use a different package manager like `yarn`, `pnpm`, or `deno` to

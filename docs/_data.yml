@@ -14,9 +14,9 @@ sidebar:
       - docs/reference/errors/
   - section: Using MF2 with...
     children:
-      - docs/frameworks/angular/
       - docs/integration/js/
       - docs/integration/java/
       - docs/integration/c/
       - docs/integration/cpp/
+      - docs/frameworks/angular/
       - docs/lsp/

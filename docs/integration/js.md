@@ -3,11 +3,16 @@ title: Using MF2 with JavaScript and TypeScript
 sidebar_title: JavaScript/TypeScript
 ---
 
-The following guide explains how to use the `messageformat` package to format
-MF2 messages. For full API documentation, see the
+The following guide explains how to use the `messageformat` NPM package to
+format MF2 messages. For full API documentation, see the
 [API documentation site](https://messageformat.github.io/modules/messageformat)
 for the package. This guide shows the simplest use cases for the API. More
 advanced uses are possible, which are documented in the API documentation.
+
+> Are you looking for information on using MF2 with a specific web framework? A
+> number of higher-level framework-specific integration packages are available:
+>
+> - [Angular](../../frameworks/angular)
 
 ## Installation and setup
 
@@ -15,14 +20,14 @@ Install/add the package to your project. If you're using Node.js with npm, you
 can do this by running
 
 ```sh
-npm install --save-exact messageformat@next
+npm install --save-exact messageformat
 ```
 
 or use the corresponding operation for your preferred package manager. For
 instance, for Deno projects, you can run
 
 ```sh
-deno add npm:messageformat@next
+deno add npm:messageformat
 ```
 
 once that's done, you can import the contructor in your code like
@@ -182,7 +187,7 @@ providing definitions for custom functions. To start with, let's write code for
 a simple custom function:
 
 ```js
-import { DefaultFunctions, asString } from "messageformat@next/functions";
+import { asString, DefaultFunctions } from "messageformat@next/functions";
 
 /** @type {typeof DefaultFunctions.string} */
 function uppercase(context, options, input) {

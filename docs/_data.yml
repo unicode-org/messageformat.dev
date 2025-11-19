@@ -19,7 +19,5 @@ sidebar:
       - docs/integration/c/
       - docs/integration/cpp/
       - docs/frameworks/angular/
-      - docs/lsp/
-  - section: Frameworks
-    children:
       - docs/frameworks/sveltekit/
+      - docs/lsp/

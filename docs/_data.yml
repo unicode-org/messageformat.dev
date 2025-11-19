@@ -18,4 +18,5 @@ sidebar:
       - docs/integration/java/
       - docs/integration/c/
       - docs/integration/cpp/
+      - docs/frameworks/angular/
       - docs/lsp/

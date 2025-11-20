@@ -20,4 +20,5 @@ sidebar:
       - docs/integration/cpp/
       - docs/frameworks/angular/
       - docs/frameworks/react/
+      - docs/frameworks/sveltekit/
       - docs/lsp/

@@ -13,6 +13,7 @@ advanced uses are possible, which are documented in the API documentation.
 > number of higher-level framework-specific integration packages are available:
 >
 > - [Angular](../../frameworks/angular)
+> - [React](../../frameworks/react)
 > - [SvelteKit](../../frameworks/sveltekit)
 
 ## Installation and setup

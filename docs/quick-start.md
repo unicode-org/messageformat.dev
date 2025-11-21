@@ -19,6 +19,7 @@ If you are using a web framework, you may want to check out one of the
 framework-specific integration guides and packages:
 
 - [Angular](/docs/frameworks/angular)
+- [React](/docs/frameworks/react)
 - [SvelteKit](/docs/frameworks/sveltekit)
 
 To set up your editor or IDE to work with MessageFormat 2, see the

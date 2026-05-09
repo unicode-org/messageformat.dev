@@ -188,7 +188,7 @@ export function Examples() {
           </p>
           <p>
             MessageFormat 2 doesn't assign meaning to markup, giving full
-            control over it's meaning and rendering to the developer.
+            control over its meaning and rendering to the developer.
           </p>
         </ExampleProse>
         <MarkupCode />

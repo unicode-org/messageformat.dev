@@ -110,6 +110,10 @@ i18n
 export default i18n;
 ```
 
+Import this file once in your application's entry file, for example
+`import "./i18n";` in `main.tsx`, so the configuration runs before your
+components render.
+
 > Instead of defining the selected locale (`lng`) and `resources` directly in
 > the `init` function, you may also choose to load them dynamically, e.g. via
 > [i18next-http-backend](https://github.com/i18next/i18next-http-backend),

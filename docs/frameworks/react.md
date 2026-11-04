@@ -258,6 +258,64 @@ supported:
   characters U+2068 and U+2069, which `messageformat` adds by default. They show
   up when you compare rendered strings, for example in tests.
 
+## Using i18next-mf2 instead
+
+i18next also has its own MF2 plugin,
+[i18next-mf2](https://github.com/i18next/i18next-mf2). It is an `i18nFormat`
+plugin rather than a post-processor: `messageformat` formats the whole message,
+and i18next's own interpolation, plural and context handling are not used.
+
+```bash
+npm install i18next i18next-mf2 react-i18next
+```
+
+```ts
+// i18n.ts
+import i18n from "i18next";
+import MF2 from "i18next-mf2";
+import { initReactI18next } from "react-i18next";
+
+i18n
+  .use(MF2)
+  .use(initReactI18next)
+  .init({
+    lng: "en",
+    resources: {
+      en: {
+        translation: {
+          apples:
+            ".input {$value :number}\n.match $value\none {{<0>1</0> apple}}\n* {{<0>{$value}</0> apples}}",
+        },
+      },
+    },
+  });
+
+export default i18n;
+```
+
+MF2 markup such as `{#bold}…{/bold}` is dropped when a message is formatted to a
+string. For rich text, use numbered tags like `<0>…</0>`, which MF2 treats as
+plain text, and pass the elements to `<Trans>`:
+
+```tsx
+import { Trans } from "react-i18next";
+export default function ApplesComponent({ count }: { count: number }) {
+  return (
+    <Trans
+      i18nKey="apples"
+      values={{ value: count }}
+      components={[<strong />]}
+    />
+  );
+}
+```
+
+> Output when `count` is 5: **5** apples
+
+The [Using ICU or MF2](https://www.i18next.com/how-to/using-icu-or-mf2) page in
+the i18next docs lists which i18next features keep working with the plugin, and
+covers type-checked message arguments and extraction with i18next-cli.
+
 ## Acknowledgements
 
 - [i18next](https://www.i18next.com/) - the internationalization framework

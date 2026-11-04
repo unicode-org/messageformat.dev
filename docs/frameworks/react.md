@@ -6,7 +6,7 @@ sidebar_title: React
 This guide explains how to localize React applications with MessageFormat 2
 (MF2), using the `mf2react` package.
 
-The library builds ontop of [i18next](https://www.i18next.com/) and
+The library builds on top of [i18next](https://www.i18next.com/) and
 [react-i18next](https://react.i18next.com/), popular internationalization
 frameworks for JavaScript and React.
 
@@ -21,7 +21,8 @@ MF2 features such as pluralization, select, and conditional logic are fully
 supported. For example, the following MF2 message:
 
 ```mf2
-.match {$count: number}
+.input {$count :number}
+.match $count
 one    {{You have {$count} message}}
 *      {{You have {$count} messages}}
 ```
@@ -43,10 +44,12 @@ export default function MessagesComponent({ count }: { count: number }) {
 ## Installation and setup
 
 In an existing React project, install the `mf2react` package, along with the
-`i18next`, and `react-i18next` dependencies:
+`i18next`, and `react-i18next` dependencies. `mf2react` 0.1.12 lists i18next 25
+and react-i18next 16 as peer dependencies, so npm refuses to install it next to
+i18next 26 or react-i18next 17:
 
 ```bash
-npm install mf2react i18next react-i18next
+npm install mf2react i18next@25 react-i18next@16
 ```
 
 You can also use a different package manager, such as `yarn`, `pnpm`, or `deno`
@@ -114,17 +117,20 @@ export default i18n;
 > Additionally you may want to auto-detect the user's locale using
 > [i18next-browser-languagedetector](https://github.com/i18next/i18next-browser-languagedetector).
 
-### Wrapping your application with I18nextProvider
+### Wrapping your application with I18nextProvider (optional)
 
-To use translations in your React components, you need to wrap your application
-with the `I18nextProvider` from `react-i18next`. This is typically done in your
-main application file or layout component.
+`initReactI18next` already makes the i18next instance available to
+`useTranslation` and `<Trans>`, so the provider is not required. Wrap your
+application with the `I18nextProvider` from `react-i18next` if you want to pass
+the instance through React context instead, for example when you use more than
+one i18next instance. This is typically done in your main application file or
+layout component.
 
-```ts
+```tsx
 "use client";
 
 import { I18nextProvider } from "react-i18next";
-import { i18n } from "./i18n";
+import i18n from "./i18n";
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
   return <I18nextProvider i18n={i18n}>{children}</I18nextProvider>;
@@ -248,10 +254,13 @@ supported:
   recompiles as needed.
 - Unsupported MF2 syntax will fall back gracefully to raw string + curly tag
   conversion.
+- Placeholders such as `{$name}` are wrapped in the invisible bidi isolation
+  characters U+2068 and U+2069, which `messageformat` adds by default. They show
+  up when you compare rendered strings, for example in tests.
 
 ## Acknowledgements
 
-- [i18next](https://www.i18next.com/) - the internalization framework
+- [i18next](https://www.i18next.com/) - the internationalization framework
 - [react-i18next](https://react.i18next.com/) - React bindings for i18next
-- [@messageformat/core](https://github.com/messageformat/messageformat) -
-  MessageFormat2 engine used for compiling and evaluating MF2 syntax.
+- [messageformat](https://github.com/messageformat/messageformat) - the MF2
+  engine used for compiling and evaluating MF2 syntax.
